@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <script>
-    function computerPlay() {
-        var num = Math.floor((Math.random() * 3) + 1);
-        if (num==1){
-        console.log("Rock")
+function computerPlay() {
+    var num = Math.floor((Math.random() * 3) + 1);
+    if (num==1){
+        var choice = ("Rock")
         };
-        if (num==2){
-        console.log("Paper")
+    if (num==2){
+        var choice = ("Paper")
         };
-        if (num==3){
-        console.log("Scissors")
+    if (num==3){
+        var choice = ("Scissors")
         };
+    console.log(choice)
+    return choice
     }
-computerPlay()
+function playRound(playerSelection, computerSelection) {
+    var playerSelection = prompt("Choose Rock/Paper/Scissors")
+    var computerSelection = computerPlay()
+    if (playerSelection==computerSelection) {
+        var result = "Draw"
+    }
+    else if (playerSelection=="Rock") {
+        if (computerSelection=="Scissors") {
+            var result = "You win!"
+        }
+        else if (computerSelection=="Paper") {
+            var result = "Computer Win!"
+        }
+    }
+    else if (playerSelection=="Paper") {
+        if (computerSelection=="Scissors") {
+            var result = "Computer Win!"
+        }
+        else if (computerSelection=="Rock") {
+            var result = "You win!"
+        }
+    }
+    else if (playerSelection=="Scissors") {
+        if (computerSelection=="Rock") {
+            var result = "Computer Wins"
+        }
+        else if (computerSelection=="Paper") {
+            var result = "You win!"
+        }
+    }
+    console.log(result)
+    return result
+}
+playRound()
 </script>
 
 
